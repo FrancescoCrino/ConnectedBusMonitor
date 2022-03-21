@@ -1,4 +1,5 @@
-# Name of the project
+# Connected Bus Monitoring
+For Sustainable Mobility
 
 ## Contributors
 
