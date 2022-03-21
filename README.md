@@ -10,7 +10,12 @@ For Sustainable Mobility
 ## ✨ Main Idea
 Connected Bus Monitor is a service aimed at providing (near) real time estimates of waiting times/proximity and indoor air quality monitoring of surface public transport. 
 
-## Documents
+## 📄 Documents
 - [Concept](https://github.com/ashkanans-lab/IOTGroupProject/blob/main/Concept.md)
 - [Technology]()
 - [Evaluation]()
+
+## 🎥 Videos
+
+- [Presentation of the project]()
+- [Demo]()
