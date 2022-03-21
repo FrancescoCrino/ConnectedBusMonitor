@@ -25,7 +25,7 @@ So, the main goal of the project is to improve the user experience by:
 
 ### First Delivery
 - [Concept]()
-- [Technology]()
+- [Technology](https://youtu.be/HaNQlSPod3I)
 - [Evaluation]()
 
 ## 🤝 Contributors
