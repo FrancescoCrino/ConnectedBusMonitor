@@ -7,6 +7,10 @@ For Sustainable Mobility
 - [Francesco Giuseppe Crino']()
 - [Constanta Efros]()
 
+<a href="https://github.com/ashkanans-lab/IOTGroupProject/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ashkanans-lab/IOTGroupProject" />
+</a>
+
 ## ✨ Main Idea
 Connected Bus Monitor is a service aimed at providing (near) real time estimates of waiting times/proximity and indoor air quality monitoring of surface public transport. 
 
