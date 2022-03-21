@@ -18,7 +18,7 @@ So, the main goal of the project is to improve the user experience by:
 
 ## 📄 Documents
 - [Concept](https://github.com/ashkanans-lab/IOTGroupProject/blob/main/Concept.md)
-- [Technology]()
+- [Technology](https://github.com/ashkanans-lab/IOTGroupProject/blob/main/Technology.md)
 - [Evaluation]()
 
 ## 🎥 Videos
