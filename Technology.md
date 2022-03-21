@@ -1,19 +1,18 @@
-**TECHNOLOGY**
+# TECHNOLOGY
 
-PROJECT MAIN PARTS:
+## PROJECT MAIN PARTS:
 
 - End-device
 - Gateway
 - Cloud + Front-End
 
-
-**BUS MONITOR:**
+## BUS MONITOR
 
 The bus monitor is the device we want to use to monitor the bus collecting information about the quality of the air inside the bus and about the position of the bus. The core of this component is a STM32 Nucleo-F401RE board that runs RIOT operative systems. The Nucleo board is connected with four sensors: GPS, Accelerometer, Temperature-Humidity and CO2 sensor. The end-device is also equipped with a LoRa shield used to communicate with the gateway through LoRa communication protocol that allows a very good mobility thanks to its long range signal. Since the device will be positioned in a bus we can connect it to an energy source and so in this case we do not have strict constraints in terms of energy consumption.
 
 
 
-**GATEWAY:**
+## GATEWAY
 
 All the End-devices are connected with a gateway.
 Our gateway is composed of a Nucleo board STM32 Nucleo-F446ZE and a LoRa shield that allows the gateway to communicate with the end-devices through the LoRa communication protocol. 
@@ -22,7 +21,7 @@ The gateway communicates with the AWS cloud via MQTT.
 
 
 
-**CLOUD + FRONT-END:**
+## CLOUD + FRONT-END
 
 To manage the collected data we will use the Amazon Web Services, AWS, utilities.
 The front-end of that project consists of a web page or a mobile application (maybe both) that access the data stored in the AWS cloud following a REST paradigm.
@@ -30,9 +29,9 @@ The front-end part needs to focus on the end-user experience giving correct info
 
 
 
-**BOARDS**
+## BOARDS
 
-**STM32 Nucleo-F446ZE**
+### STM32 Nucleo-F446ZE
 
 ![](img/f446ze.JPG)
 
@@ -54,8 +53,7 @@ The front-end part needs to focus on the end-user experience giving correct info
 
 - Datasheet: https://www.st.com/resource/en/datasheet/stm32f446ze.pdf
 
-
-**STM32 Nucleo-F401RE**
+### STM32 Nucleo-F401RE
 
 ![](img/f401re.JPG)
 
@@ -71,9 +69,9 @@ The front-end part needs to focus on the end-user experience giving correct info
 - Datasheet: https://www.st.com/resource/en/datasheet/stm32f446ze.pdf
 
 
-**SENSORS:**
+## SENSORS
 
-**GPS**: GPS NEO 6M UBLOX
+### GPS: GPS NEO 6M UBLOX
 
 ![](img/gps.JPG)
 
@@ -93,7 +91,7 @@ Datasheet:
 https://homotix\_it.e-mind.it/upld/repository/File/neo-6\_datasheet\_(gps.g6-hw-09005).pdf
 
 
-**ACCELEROMETER**: Xtrinsic MMA8451Q 3-Axis
+### ACCELEROMETER: Xtrinsic MMA8451Q 3-Axis
 
 ![](img/Accelerometro.JPG)
 
@@ -124,7 +122,7 @@ Datasheet:
 <https://cdn-shop.adafruit.com/datasheets/MMA8451Q-1.pdf>
 
 
-**AIR QUALITY SENSOR**: Infrared CO2 Sensor Module MH-Z19B
+### AIR QUALITY SENSOR: Infrared CO2 Sensor Module MH-Z19B
 
 ![](img/Co2.JPG)
 
@@ -151,7 +149,7 @@ Main parameters
 ![](img/Co2_MainParam.JPG)
 
 
-**TEMPERATURE & HUMIDITY SENSOR**: Gravity DHT11 Temperature Humidity Sensor
+### TEMPERATURE & HUMIDITY SENSOR: Gravity DHT11 Temperature Humidity Sensor
 
 ![](img/Temp_Hum.JPG)
 
@@ -174,9 +172,9 @@ Datsheet: https://www.farnell.com/datasheets/2700138.pdf
 
 
 
-**CONNECTIVITY:**
+## CONNECTIVITY
 
-**LoRa MODULE**: Dragino LoRa Shield - support 868M frequency
+### LoRa MODULE**: Dragino LoRa Shield - support 868M frequency
 
 Features:
 
@@ -211,7 +209,7 @@ Datsheet: https://www.farnell.com/datasheets/2630874.pdf
 
 
 
-**ARCHITECTURE:**
+## ARCHITECTURE:
 
 ![](img/Complete_Network_2.JPG)
 
