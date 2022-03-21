@@ -6,7 +6,7 @@
 **Connected Bus Monitor** is a service aimed at providing (near) real time estimates of waiting times/proximity and indoor air quality monitoring of surface public transport. 
 
 ## ✨ Main Idea
-Have you ever used public transportation and felt unsatistief along your short trip? This project proposes a solution to overcome this situation. The project connects to Open Impact in the area of Urban regeneration through sustainable mobility. It aims to provide incentives for the use of public transport as a reliable and affordable means of sustainable mobility.
+Have you ever used public transportation and felt unsatistied along your short trip? This project proposes a solution to overcome this situation. The project connects to Open Impact in the area of Urban regeneration through sustainable mobility. It aims to provide incentives for the use of public transport as a reliable and affordable means of sustainable mobility.
 
 With the proposed device, we want to provide for the commuters an application withwhich they can check the Temperature and CO2 and the location of vehicle and choose the best way to reach the destination based on their needs. 
 
@@ -23,7 +23,7 @@ So, the main goal of the project is to improve the user experience by:
 
 ## 🎥 Videos
 
-### First Deliery
+### First Delivery
 - [Concept]()
 - [Technology]()
 - [Evaluation]()
