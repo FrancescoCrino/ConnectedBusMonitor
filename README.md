@@ -10,7 +10,7 @@ Connected Bus Monitor is a service aimed at providing (near) real time estimates
 
 ## 📄 Documents
 - [Concept](https://github.com/ashkanans-lab/IOTGroupProject/blob/main/Concept.md)
-- [Technology]()
+- [Technology](https://github.com/ashkanans-lab/IOTGroupProject/blob/main/Technology.md)
 - [Evaluation]()
 
 ## 🎥 Videos
