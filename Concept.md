@@ -79,7 +79,7 @@ Pain Points/Frustrations
  
 
 ## Storyboard
-![Storyboard](/Picture/Storyboard-Complete.png)
+![Storyboard](/img/Storyboard.png)
 
 
 ## Sources/References
