@@ -11,8 +11,8 @@ Evaluating ConnectedBusMonitor can be done in different way. Different approache
 ### Network Technologies:
 - Long Range connection
 - Network Reliability:
-- Low number of loss packets
-- Scalability
+- - Low number of loss packets
+- - Scalability
 - Low Power consumption
 - LoRa constraints
 
