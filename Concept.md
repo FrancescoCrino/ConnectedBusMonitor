@@ -42,26 +42,26 @@ In order to provide quality of service information, Connected Bus Monitor takes 
 
 a) Private sector employee
 
-Goals/Needs  
+*Goals/Needs*  
        
-Punctuality
-Safeguard personal health
+- Punctuality
+- Safeguard personal health
 
-Pain Points/Frustrations
+*Pain Points/Frustrations*
 
-Fears the risk implied in making uninformed choices
-Eagerness/Low waiting time tolerance
+- Fears the risk implied in making uninformed choices
+- Eagerness/Low waiting time tolerance
 
 
 b) Student
 
-Goals/Needs
+*Goals/Needs*
 
 - Access to affordable transport options
 - Availability of public transport options for most mobility needs (private options unavailable)
 - Safeguarding personal and environmental health
 
-Pain Points/Frustrations
+*Pain Points/Frustrations*
 
 - Increased numerosity of private transport means in his city (traffic/congestion, pollution)
 
@@ -69,12 +69,13 @@ Pain Points/Frustrations
 ## 2. Public transport driver's point of view
 a) Public bus driver
 
-Goals/Needs
+*Goals/Needs*
+
 - Safety in the work environment
 - Safeguarding personal health
 - Professionality
 
-Pain Points/Frustrations
+*Pain Points/Frustrations*
 - Passenger complaints
  
 
