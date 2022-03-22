@@ -1,13 +1,13 @@
 # Connected Bus Monitor - Concept
-IoT 2022 First Assignement
+IoT 2022 First Delivery
 
 Connected Bus Monitor is a service aimed at providing (near) real time estimates of waiting times/proximity
-and indoor air quality monitoring of surface public transport.
+and indoor air quality conditions of surface public transport.
 
 
 # Goals
 
-The goals of the proposed service are to provide
+The goals of the proposed service are to improve public transport by striving to guarantee
  
 1. Sustainability
 2. Reliability
@@ -15,10 +15,13 @@ The goals of the proposed service are to provide
 4. Salubrity and Safety
 
 
-The project connects to Open Impact in the area of Urban regeneration through sustainable mobility. It aims to provide incentives for the use of public transport
- as a reliable and affordable means of sustainable mobility oriented at reducing emissions and congestion in urban areas without restrictions on the engine type
- of the surface transport units.
-
+The project connects to Open Impact in the area of Urban Regeneration through sustainable mobility.
+It aims to provide incentives to use public transport and consider it a reliable and affordable means of sustainable mobility
+it is oriented at reducing emissions, congestion and occupation of parking spaces in urban areas.
+The proposed solution does not impose constraints on the transport units' engine type,
+ thereby guaranteeing feasibility and viability in short terms in the perspective of a transition towards
+ the wide use of zero emission vehicles. 
+ 
  The European Union Council of Ministers of Transport defines sustainable mobility as a service that
  
 1. allows the basic access and development needs of individuals, companies and societies to be met safely and in a manner consistent
