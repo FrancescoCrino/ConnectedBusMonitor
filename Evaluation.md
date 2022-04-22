@@ -1,6 +1,7 @@
 # Evaluation
-Evaluating ConnectedBusMonitor can be done in different way. Within this document we will Evaluate different aspects of this product from different point of views. These points are: 
-**Cost** and Price of the product. 
+Evaluating ConnectedBusMonitor can be done in different way. Within this document we will Evaluate different aspects of this product from different point of views. These points are: Costs, Network performance, Power Consumption
+
+# **Costs**. 
 Here we will examine and discuss wether putting this amount of energy and money into the proposed product worth it. (prices are found in local markets, they may differ for different places)
 - STM32 Nucleo-F446ZE Board: about 25 euros
 - GPS: GPS NEO 6M UBLOX: about 20 euros
@@ -11,7 +12,7 @@ Here we will examine and discuss wether putting this amount of energy and money 
 - Dragino LoRa Shield: about 20 euros
 
 
-# Network Technologies:
+# **Network Technologies**
 - Long Range connection
 - Network Reliability:
 - - Low number of loss packets
