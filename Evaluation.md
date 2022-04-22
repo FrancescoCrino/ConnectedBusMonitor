@@ -1,7 +1,7 @@
 # Evaluation
 Evaluating ConnectedBusMonitor can be done in different way. Within this document we will Evaluate different aspects of this product from different point of views. These points are: Costs, Network performance, Power Consumption
 
-# **Costs**. 
+# **Costs**
 Here we will examine and discuss wether putting this amount of energy and money into the proposed product worth it. (prices are found in local markets, they may differ for different places)
 - STM32 Nucleo-F446ZE Board: about 25 euros
 - GPS: GPS NEO 6M UBLOX: about 20 euros
@@ -12,15 +12,20 @@ Here we will examine and discuss wether putting this amount of energy and money 
 - Dragino LoRa Shield: about 20 euros
 
 
+# **Components**
+
 # **Network Technologies**
-- Long Range connection
+In this section network performance will be measured in terms of the following key charachteristics:
+- Range of connection
 - Network Reliability:
-- - Low number of loss packets
-- - Scalability
-- Low Power consumption
-- LoRa constraints
+- - Network traffic and number of packets sent
+
+# **Power consumption**
+
+# **Constraints**
+In this section the constraints will be discussed. These can be categorzied in to the constraint of the network architecture (LoraWAN), constraints of components and the infrasructure.
 
 # End-user 
-response time for the user will be measured. 
+
 
 Along doing this project, up to the second delivery different metrics will be used to measure and evaluate this device
