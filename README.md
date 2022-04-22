@@ -24,9 +24,9 @@ So, the main goal of the project is to improve the user experience by:
 During this project, experiments were done on local buses, trams, trains and metros during a normal working day in different hours of a day in Rome. The device used to gather data is a simple CO2 meter which can be found simply on online markets. The focus of attention was carbon dioxide concentration. The permitted value 900-1000 ppm of CO2 was exceeded many times during the experiment and the maximum measured concentration was 2500 ppm. 
 
 This experiment has been done in other cities as well:
-[Brussel](https://www.vrt.be/vrtnws/nl/2021/12/21/co2-metingen-openbaar-vervoer/)
-[Taiwan](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0125117)
-[Hong Kong](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0125117#pone.0125117.ref029)
+[Brussel](https://www.vrt.be/vrtnws/nl/2021/12/21/co2-metingen-openbaar-vervoer/),
+[Taiwan](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0125117),
+[Hong Kong](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0125117#pone.0125117.ref029) and
 [Sounth Texas](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0125117#pone.0125117.ref032)
 
 
