@@ -16,6 +16,7 @@ Here we will examine and discuss wether putting this amount of energy and money 
 
 # **Network Technologies**
 In this section network performance will be measured in terms of the following key charachteristics:
+- Latency
 - Range of connection
 - Network Reliability:
 - - Network traffic and number of packets sent
