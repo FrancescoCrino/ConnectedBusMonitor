@@ -71,7 +71,7 @@ The Teseo-LIV3F is a compact (9.7x10.1 mm) module that provides superior accurac
 The Teseo-LIV3F module runs the GNSS firmware (X-CUBE-GNSS1) to perform all GNSS operations including acquisition, tracking, navigation and data output without external memory support.
 The X-NUCLEO-GNSS1A1 expansion board is compatible with the Arduino™ UNO R3 connector and the ST morpho connector, so it can be plugged to the STM32 Nucleo development board and stacked with additional STM32 Nucleo expansion boards.
 
-![](img/gps.JPG)
+![](img/gnss.JPG)
 
 Features:
 
@@ -102,7 +102,7 @@ https://www.st.com/en/ecosystems/x-nucleo-gnss1a1.html#overview
 
 ### ACCELEROMETER, TEMPERATURE and HUMIDITY SENSOR: X-NUCLEO-IKS01A2
 
-![](img/Accelerometro.JPG)
+![](img/iks01a2.JPG)
 
 Description:
 
@@ -138,7 +138,12 @@ Datasheet:
 https://www.st.com/en/ecosystems/x-nucleo-iks01a2.html#overview
 
 
-### AIR QUALITY SENSOR: Infrared CO2 Sensor Module MH-Z19B
+### CO2 SENSOR: MH-Z19C
+
+Description:
+
+MH-Z19C NDIR infrared gas module is a common type, small size sensor, using non-dispersive infrared (NDIR) principle to detect the existence of CO2 in the air, with good selectivity, non-oxygen dependent and long life. Built-in temperature compensation; and it has UART output and PWM output. 
+It is developed by the tight integration of mature infrared absorbing gas detection technology, precision optical circuit design and superior circuit design.
 
 ![](img/Co2.JPG)
 
@@ -154,15 +159,15 @@ Features:
 
 Datasheet:
 
-https://www.winsen-sensor.com/d/files/infrared-gas-sensor/ndir-co2-sensor/mh-z19b-co2-manual(ver1\_6).pdf
+https://www.winsen-sensor.com/d/files/infrared-gas-sensor/mh-z19c-pins-type-co2-manual-ver1_0.pdf
 
 Detection range and accuracy
 
-![](img/Co2_Acc.JPG)
+![](img/Co2_Acc_2.JPG)
 
 Main parameters
 
-![](img/Co2_MainParam.JPG)
+![](img/co2_params.JPG)
 
 
 ## CONNECTIVITY
@@ -204,7 +209,7 @@ Datsheet: https://www.farnell.com/datasheets/2630874.pdf
 
 ## ARCHITECTURE STRUCTURE:
 
-![](img/Complete_Network_2.JPG)
+![](img/Complete_Network_3.JPG)
 
 
 
