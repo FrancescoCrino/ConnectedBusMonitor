@@ -36,10 +36,10 @@ We can resume the levels of our three bus indoor air quality indicator with the 
 ![](img/hum_graph.JPG)
 
 We can define 4 levels of air quality inside the bus:
-- bad: all the indicators are not in the ideal range
-- ok: only one indicator is in the ideal range
-- good: two indicators are in the ideal range
-- ideal: all the indicators are in the ideal range
+- bad   🥵: all the indicators are not in the ideal range
+- ok    😑: only one indicator is in the ideal range
+- good  😊: two indicators are in the ideal range
+- ideal 😄: all the indicators are in the ideal range
 
 # **LoRa protocol constraints**
 
