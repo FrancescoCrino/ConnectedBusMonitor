@@ -9,7 +9,7 @@ We will not focus on the power consumption aspect, that normally is one of the m
 
 # **Indoor bus air quality monitoring**
 
-According to many research high values of CO2 can reduce decision-making capabilities and increase mental stress.
+According to many researches high values of CO2 can reduce decision-making capabilities and increase mental stress.
 The level of CO2 in offices has to be controlled and it is law regulated. In fact guidelines suggest CO2 levels do not exceed 700 ppm above outdoor levels, the ASHRAE action level. Some individuals are sensitive to CO2 levels as low as 600 ppm so action may even be warranted at lower levels.
 
 Since in big cities like Rome, we can spend also 40 minutes in a bus, a too high concentration of CO2 inside the bus may affect our mental stress and also our healt.
@@ -18,14 +18,14 @@ We have did some tests in Rome monitoring the CO2 concentrations in different bu
 
 ![](img/co2_bus_table.JPG)
 
-The prevoius table reports the min/max values registered in three different buses taken in Rome in March/April 2022.
+The prevoius table reports the mininum and maximum values recorded in three different buses taken in Rome during March/April 2022.
 
 Furthermore the CO2 contentration in Rome open air is around 220 ppm so following the CO2 regulation for offices we may consider values less than 920 as good values.
 
-We want to consider as bus indoor air quality indicators also the humidity and the temperature inside the bus.
+We want to consider as indoor air quality indicators also the humidity and the temperature inside the vehicle.
 
-A good range of humidity is 40%-60%, if we have a temperature of around 40% we are in a dry environment and with low temperature skin irritation and discomfort may occur.
-On the contrary if we have a temperature of ariund 60% we are in a humid enviroment that in case of high temperature can cause excessive sweating and altered temperature perception.
+A good range of humidity is 40%-60%, if we have a value of around 40% we are in a dry environment and with low temperature skin irritation and discomfort may occur.
+On the contrary, if we have a humidity of around 60% we are in a humid enviroment that in case of high temperature can cause excessive sweating and altered temperature perception.
 
 As regards the temperature the range 20°-25° is considered to be the ideal one.
 
