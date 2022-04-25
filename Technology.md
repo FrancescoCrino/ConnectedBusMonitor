@@ -3,7 +3,6 @@
 ## PROJECT MAIN PARTS:
 
 - End-device
-- Gateway
 - Cloud + Front-End
 
 ## BUS MONITOR
@@ -11,21 +10,12 @@
 The bus monitor is the device we want to use to monitor the bus collecting information about the quality of the air inside the bus and about the position of the bus. The core of this component is a STM32 Nucleo-F401RE board that runs RIOT operative systems. The Nucleo board is connected with four sensors: GPS, Accelerometer, Temperature-Humidity and CO2 sensor. The end-device is also equipped with a LoRa shield used to communicate with the gateway through LoRa communication protocol that allows a very good mobility thanks to its long range signal. Since the device will be positioned in a bus we can connect it to an energy source and so in this case we do not have strict constraints in terms of energy consumption.
 
 
-
-## GATEWAY
-
-All the End-devices are connected with a gateway.
-Our gateway is composed of a Nucleo board STM32 Nucleo-F446ZE and a LoRa shield that allows the gateway to communicate with the end-devices through the LoRa communication protocol. 
-The gateway receives all the information collected from the end-devices and forwards them to the AWS cloud.
-The gateway communicates with the AWS cloud via MQTT.
-
-
-
 ## CLOUD + FRONT-END
 
 To manage the collected data we will use the Amazon Web Services, AWS, utilities.
-The front-end of that project consists of a web page or a mobile application (maybe both) that access the data stored in the AWS cloud following a REST paradigm.
-The front-end part needs to focus on the end-user experience giving correct information in short time and having a user-friendly interface. 
+In particular our bus monitors will be connected with [AWS IoT Core for LoRaWAN](https://aws.amazon.com/it/iot-core/lorawan/) that is a fully managed LoRaWAN Network Server (LNS) that enables customers to connect wireless devices that use the LoRaWAN protocol.
+In the cloud will be collected all the data collected by the bus monitor and those data can be accessed any time to obtain the information about the state of the bus.
+The front-end of that project consists of a web page that access the data stored in the AWS cloud following a REST paradigm and provides to the user all the information about indoor state of the bus in terms of temperature, humidity and CO2 and the position of the bus in near real-time.
 
 
 
@@ -71,55 +61,81 @@ The front-end part needs to focus on the end-user experience giving correct info
 
 ## SENSORS
 
-### GPS: GPS NEO 6M UBLOX
+### GPS: X-NUCLEO-GNSS1A1
+
+Description:
+
+The X-NUCLEO-GNSS1A1 expansion board is based on the Teseo-LIV3F tiny GNSS module.
+It represents an affordable, easy-to-use, global navigation satellite system (GNSS) module, embedding a TeseoIII single die standalone positioning receiver IC, usable in different configurations in your STM32 Nucleo project.
+The Teseo-LIV3F is a compact (9.7x10.1 mm) module that provides superior accuracy thanks to the on-board 26 MHz temperature compensated crystal oscillator (TCXO) and a reduced time-to-first fix (TTFF) with its dedicated 32 KHz real-time clock (RTC) oscillator.
+The Teseo-LIV3F module runs the GNSS firmware (X-CUBE-GNSS1) to perform all GNSS operations including acquisition, tracking, navigation and data output without external memory support.
+The X-NUCLEO-GNSS1A1 expansion board is compatible with the Arduino™ UNO R3 connector and the ST morpho connector, so it can be plugged to the STM32 Nucleo development board and stacked with additional STM32 Nucleo expansion boards.
 
 ![](img/gps.JPG)
 
 Features:
 
-- Supply from 3Vcc to 5Vcc
-- 50 channels receiver
-- Battery for data backup
-- Refresh frequency: 5Hz
-- Serial output 9600 Baud, 8 bit, 1 bit stop 
-- Data output NMEA
-- Dimensioni: 30mm x 23mm x 4mm
-- Dimensioni antenna: 25mm x 25mm x 8mm
+- Operating supply voltage: 3.3 - 5 V
+- Ambient temperature: -40/+85 °C
+- Sensitivity: -162 dBm indoor (tracking mode)
+- Interfaces:
+  - a UART port
+  - an I²C port
+  - Configurable digital I/O timepulse
+  - EXTINT input for wakeup
+- NMEA protocol
+- Assisted GNSS:
+  - Predictive autonomous
+  - Predictive server-based
+  - Real-time server-based
+- Compatible with STM32 Nucleo boards
+- Compatible with the Arduino™ UNO R3 connector
+- LNA and SAW filter on the RF path
+- SMA female antenna connector
+- Battery holder
+- RoHS and WEEE compliant
 
 Datasheet:
 
-https://homotix\_it.e-mind.it/upld/repository/File/neo-6\_datasheet\_(gps.g6-hw-09005).pdf
+https://www.st.com/en/ecosystems/x-nucleo-gnss1a1.html#overview
 
 
-### ACCELEROMETER: Xtrinsic MMA8451Q 3-Axis
+### ACCELEROMETER, TEMPERATURE and HUMIDITY SENSOR: X-NUCLEO-IKS01A2
 
 ![](img/Accelerometro.JPG)
 
+Description:
+
+The X-NUCLEO-IKS01A2 is a motion MEMS andenvironmental sensor expansion board for the STM32 Nucleo.
+It is equipped with Arduino UNO R3 connector layout, and is designed around the LSM6DSL 3D accelerometer and 3D gyroscope, the LSM303AGR 3D accelerometer and 3D magnetometer, the HTS221 humidity and temperature sensor and the LPS22HB pressure sensor.
+The X-NUCLEO-IKS01A2 interfaces with the STM32 microcontroller via the I²C pin, and it is possible to change the default I²C port.
+
 Features:
 
-- 1.95V to 3.6V supply voltage
-- 1.6V to 3.6V interface voltage
-- ±2g/±4g/±8g dynamically selectable full-scale
-- Output Data Rates (ODR) from 1.56 Hz to 800 Hz
-- 99 μg/√Hz noise
-- 14-bit and 8-bit digital output
-- I2 C digital output interface (operates to 2.25 MHz with 4.7 kΩ pullup)
-- Two programmable interrupt pins for seven interrupt sources
-- Three embedded channels of motion detection
-- Freefall or Motion Detection: 1 channel
-- Pulse Detection: 1 channel
-- Jolt Detection: 1 channel
-- Orientation (Portrait/Landscape) detection with programmable hysteresis
-- Automatic ODR change for Auto-WAKE and return to SLEEP
-- 32-sample FIFO
-- High-Pass Filter Data available per sample and through the FIFO
-- Self-Test
+- LSM6DSL MEMS 3D accelerometer
+(±2/±4/±8/±16 g) and 3D gyroscope
+(±125/±245/±500/±1000/±2000 dps)
+-  LSM303AGR MEMS 3D accelerometer
+(±2/±4/±8/±16 g) and MEMS3D
+magnetometer (±50 gauss)
+- LPS22HB MEMS pressure sensor, 260-
+1260 hPa absolute digital output barometer
+- HTS221: capacitive digital relative humidity
+and temperature
+- DIL24 socket for additional MEMS adapters
+and other sensors
+- Free comprehensive development firmware
+library and example for all sensors
+compatible with STM32Cube firmware
+- I²C sensor hub features on LSM6DSL
+available
+- Compatible with STM32 Nucleo boards
+- Equipped with Arduino UNO R3 connector
 - RoHS compliant
-- Current Consumption: 6 μA to 165 μA
 
 Datasheet:
 
-<https://cdn-shop.adafruit.com/datasheets/MMA8451Q-1.pdf>
+https://www.st.com/en/ecosystems/x-nucleo-iks01a2.html#overview
 
 
 ### AIR QUALITY SENSOR: Infrared CO2 Sensor Module MH-Z19B
@@ -147,29 +163,6 @@ Detection range and accuracy
 Main parameters
 
 ![](img/Co2_MainParam.JPG)
-
-
-### TEMPERATURE & HUMIDITY SENSOR: Gravity DHT11 Temperature Humidity Sensor
-
-![](img/Temp_Hum.JPG)
-
-Features:
-
-- Standard assembling structure ( two 3mm holes with multiple of 5cm as interval ).
-- User-friendly interfaces ( "A" for analog and "D" for digital ). 
-- Icons to simply illustrate sensor function.
-- High quality connector.
-- Immersion gold surface.
-
-Specification:
-
-- Wider voltage range: 3.3V to 5V
-- Temperature range :0-50 °C error of ± 2 °C
-- Humidity :20-90% RH ± 5% RH error
-- Interface: Digital
-
-Datsheet: https://www.farnell.com/datasheets/2700138.pdf
-
 
 
 ## CONNECTIVITY
@@ -209,7 +202,7 @@ Datsheet: https://www.farnell.com/datasheets/2630874.pdf
 
 
 
-## ARCHITECTURE:
+## ARCHITECTURE STRUCTURE:
 
 ![](img/Complete_Network_2.JPG)
 
