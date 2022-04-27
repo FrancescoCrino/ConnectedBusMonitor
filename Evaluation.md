@@ -43,6 +43,34 @@ We can define 4 levels of air quality inside the bus:
 
 # **LoRa protocol constraints**
 
+In order to send the collect data to the cloud we want to connect our bus monitor devices with a cloud service using LoRa network protocol.
+In europe LoRa network procol regulate the duty cycle of the end devices to be less than 1% and obviously that has an impact on the time we need to wait between two meausre records.
+
+The payload of the messages sent by the bus monitor devices are JSON string of the form {"humidity":"51.9", "temperature":"24.0","co2":319, "gps":"38.1405228,13.2872489"} and it has size 82 bytes.
+
+For the moment we can simulate to send this kind of payload through [iot-lab](https://www.iot-lab.info/) that emulates a lora board sending the message to a lora device simulated in [TheThingNetwork](https://www.thethingsnetwork.org/)
+
+The device simulated by TTN receives the LoRa packets containing our customize payload and we can look at the properties of the packet and in particular at the data-rate settings:
+
+![](img/lora_sett.JPG)
+
+As we can see from the data-rate settings reported above our packet is sent using a bandwidth = 125kHz and SpreadingFactor = 7.
+
+![](img/lora_dr.JPG)
+
+the table above contains all the LoRa bit-rate depending on bandwidth and SF used to send the packet, since we're transmitting with bw=125kHz and SF=7 we will have bit-rate=5.47kbps. 
+
+So we can evaluate the time needed to send our packet: (82*8)/5470=0.120s.
+
+Since we need 0.120s to send a packet and we have to respect 1% duty cycle constraint, we can transmit each 12 minutes.
+
+
+# **Power consumption**
+
+
+
+
+
 # **Costs**
 Here we will examine and discuss wether putting this amount of energy and money into the proposed product worth it. (prices are found in local markets, they may differ for different places)
 - STM32 Nucleo-F446ZE Board: about 25 euros
@@ -53,7 +81,7 @@ Here we will examine and discuss wether putting this amount of energy and money 
 - Gravity DHT11 Temperature Humidity Sensor: about 5 euros
 - Dragino LoRa Shield: about 20 euros
 
-# **Power consumption**
+
 
 # **Constraints**
 In this section the constraints will be discussed. These can be categorzied in to the constraint of the network architecture (LoraWAN), constraints of components and the infrasructure.
