@@ -213,6 +213,9 @@ Datsheet: https://www.farnell.com/datasheets/2630874.pdf
 
 
 
+# History
+ 
+The previous version of the project: <a href="https://github.com/FrancescoCrino/ConnectedBusMonitor/releases/tag/v1.0">ConnectedBusMonitor First Delivery</a>
 
 
 

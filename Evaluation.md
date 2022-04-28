@@ -91,3 +91,8 @@ Here we will examine and discuss wether putting this amount of energy and money 
 - X-NUCLEO-IKS01A2: $18.38
 - CO2 SENSOR MH-Z19C: $38,99
 - I-NUCLEO-LRWAN1: $28.32
+
+
+# History
+ 
+The previous version of the project: <a href="https://github.com/FrancescoCrino/ConnectedBusMonitor/releases/tag/v1.0">ConnectedBusMonitor First Delivery</a>

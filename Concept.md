@@ -80,7 +80,7 @@ a) Public bus driver
 
 # History
  
-The previous version of the specifications: <a href="https://github.com/FrancescoCrino/ConnectedBusMonitor/releases/tag/v1.0">IoT 2022 First Delivery</a
+The previous version of the project: <a href="https://github.com/FrancescoCrino/ConnectedBusMonitor/releases/tag/v1.0">ConnectedBusMonitor First Delivery</a>
 
 ## Sources/References
 - https://ec.europa.eu/commission/presscorner/detail/en/PRES_01_131
