@@ -78,7 +78,7 @@ Since all the new generation city bus include usb port we think that most reliab
 We can think to use a rechargeable battery to power the device while the bus is stopped at the terminus between two services.
 
 In that case using the board STM32 nucleo-f401re in stop mode during the permance at the terminus it needs 65 μA of current to stay on. 
-We can use a classic AA buttery of 2600mAh that can power the STM32 nucleo-f401re in stop mode for about 40625 hours, in fact 65μA = 0.065mA and 2600/0.065=40625.
+We can use a classic AA buttery of 2600mAh that can power the STM32 nucleo-f401re in stop mode for about 40000 hours, in fact 65μA = 0.065mA and 2600/0.065=40000.
 Furthermore if we use a rechageable AA battery that can recharge itself using the same power connection of the device to the bius usb port that battery will power our device for a very long time.
 
 In that analysis we're not taking into account the power consuming of the sensors that will remain on during the stop mode, we will test the effective energy consumption of the system as soon as possible.
