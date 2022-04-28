@@ -44,7 +44,6 @@ This experiment has been done in other cities as well:
 
 ## 🤝 Contributors
 
-- [Ashkan Ansarifard](https://www.linkedin.com/in/ashkan-ansarifard-6a6326144)
 - [Francesco Giuseppe Crino']()
 - [Constanta Efros]()
 
