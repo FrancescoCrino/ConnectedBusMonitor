@@ -41,6 +41,11 @@ This experiment has been done in other cities as well:
 - [Technology](https://youtu.be/HaNQlSPod3I)
 - [Evaluation]()
 
+### First Delivery
+- [Prototype](https://youtu.be/tJuoor45rQc)
+- [Evaluation](https://youtu.be/mN9xl1TYWpw)
+- [Future Plans]()
+
 ## 🤝 Contributors
 
 - [Francesco Giuseppe Crino'](https://github.com/FrancescoCrino)
