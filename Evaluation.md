@@ -85,11 +85,12 @@ In that analysis we're not taking into account the power consuming of the sensor
 
 
 # **Costs**
-Here we will examine and discuss wether putting this amount of energy and money into the proposed product worth it. (prices are found in local markets, they may differ for different places)
-- STM32 Nucleo-F446ZE Board: 	$18.62
+Here we will examine and discuss whether putting this amount of energy and money into the proposed product is worth it (prices are found in local markets, they may differ for different places)
+- STM32 Nucleo-F446ZE Board: $18.62
+- STM32 Nucleo-F401RE Board: $13.83
 - X-NUCLEO-GNSS1A1: $34.30
 - X-NUCLEO-IKS01A2: $18.38
-- CO2 SENSOR MH-Z19C: $38,99
+- CO2 SENSOR MH-Z19C: $38.99
 - I-NUCLEO-LRWAN1: $28.32
 
 
