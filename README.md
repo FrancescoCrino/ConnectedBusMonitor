@@ -47,6 +47,3 @@ This experiment has been done in other cities as well:
 - [Francesco Giuseppe Crino']()
 - [Constanta Efros]()
 
-<a href="https://github.com/ashkanans-lab/IOTGroupProject/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ashkanans-lab/IOTGroupProject" />
-</a>
