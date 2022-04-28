@@ -1,5 +1,4 @@
 # Connected Bus Monitor - Concept
-IoT 2022 First Delivery
 
 Connected Bus Monitor is a service aimed at providing (near) real time estimates of waiting times/proximity
 and indoor air quality conditions of surface public transport.
@@ -77,11 +76,11 @@ a) Public bus driver
 
 *Pain Points/Frustrations*
 - Passenger complaints
+
+
+# History
  
-
-## Storyboard
-![Storyboard](/img/Storyboard.png)
-
+The previous version of the specifications: <a href="https://github.com/FrancescoCrino/ConnectedBusMonitor/releases/tag/v1.0">IoT 2022 First Delivery</a
 
 ## Sources/References
 - https://ec.europa.eu/commission/presscorner/detail/en/PRES_01_131
