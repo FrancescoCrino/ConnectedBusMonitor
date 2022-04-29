@@ -62,7 +62,7 @@ the table above contains all the LoRa bit-rate depending on bandwidth and SF use
 
 So we can evaluate the time needed to send our packet: (82*8)/5470=0.120s.
 
-Since we need 0.120s to send a packet and we have to respect 1% duty cycle constraint, we can transmit each 12 minutes.
+Since we need 0.120s to send a packet and we have to respect 1% duty cycle constraint, we can transmit each 12 seconds.
 
 
 # **Power consumption**
