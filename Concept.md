@@ -29,7 +29,23 @@ The proposed solution does not impose constraints on the transport units' engine
 1. is affordable, operates fairly and efficiently, offers choice of transport mode, and supports a competitive economy, as well as balanced regional development;
  
 
+# Requirements Specification
+
+## Functional Requirements
+
+- The service must insure public transport air quality monitoring (temperature, humidity, CO2)
+- The service must insure public transport geolocation tracking
+
+## Nonfunctional Requirements
+
+- The service shall provide the values in a Near Real-Time offset
+
+
+
+
  
+# User Personas
+
 The user needs are access to affordable and reliable shared public transport options and broadly speaking, having the opportunity of making informed choices on mobility solutions.
 
 
