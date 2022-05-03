@@ -46,6 +46,10 @@ This experiment has been done in other cities as well:
 - [Evaluation](https://www.youtube.com/watch?v=EWL8ODWsqZk)
 - [Future Plans]()
 
+## Releases
+
+Version 1.0: <a href="https://github.com/FrancescoCrino/ConnectedBusMonitor/releases/tag/v1.0">ConnectedBusMonitor First Delivery</a>
+
 ## 🤝 Contributors
 
 - [Francesco Giuseppe Crino'](https://github.com/FrancescoCrino)
