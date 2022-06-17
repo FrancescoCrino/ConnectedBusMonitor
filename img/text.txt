@@ -1,1 +1,0 @@
-This folder is used as a unified place for the images that are attached in the .md files.
