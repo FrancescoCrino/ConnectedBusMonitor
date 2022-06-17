@@ -1,116 +1,64 @@
 # TECHNOLOGY
 
-## PROJECT MAIN PARTS:
+In this section all the technology aspects of our project are described. <\br>
+At first we will look in detail all the hardware components used to build our device, then we will have a look at the overall architecture and then we will see how the cloud part is managed.
 
-- End-device
-- Cloud + Front-End
+## OVERALL ARCHITECHTURE:
 
-## BUS MONITOR
+--> Immagine dell'architettura
 
-The bus monitor is the device we want to use to monitor the bus collecting information about the quality of the air inside the bus and about the position of the bus. The core of this component is a STM32 Nucleo-F401RE board that runs RIOT operative systems. The Nucleo board is connected with four sensors: GPS, Accelerometer, Temperature-Humidity and CO2 sensor. The end-device is also equipped with a LoRa shield used to communicate with the gateway through LoRa communication protocol that allows a very good mobility thanks to its long range signal. Since the device will be positioned in a bus we can connect it to an energy source and so in this case we do not have strict constraints in terms of energy consumption.
+The architecture of our system is the one shown in the image above.
+It is composed of 4 main parts:
+- ***Physical Device***: Is the physical device that is placed inside the bus to monitor the indoor environment. It collects data about temperature, humidity and co2 inside the bus and sends the data to the TTN application server.
+- ***TheThingNetwork (TTN)***: We use TTN as LoRaWAN application server. It receives all the data collected by the physical device and forward them to AWS where they are stored and made available for the front-end.
+- ***AmazonWebServices***: To build our cloud services we have used Amazon Web Service AWS. Here the data forwarded by the TTN application server are received using an MQTT stack, then they are stored in a DynamoDB table and finally exposed to the front-end through rest api.
+- **Front-End**: Is a web site developend with [Angular](https://angular.io/) that shows all the available buses and for each them shows the indoor environment data.
 
-
-## CLOUD + FRONT-END
-
-To manage the collected data we will use the Amazon Web Services, AWS, utilities.
-In particular our bus monitors will be connected with [AWS IoT Core for LoRaWAN](https://aws.amazon.com/it/iot-core/lorawan/) that is a fully managed LoRaWAN Network Server (LNS) that enables customers to connect wireless devices that use the LoRaWAN protocol.
-In the cloud will be collected all the data collected by the bus monitor and those data can be accessed any time to obtain the information about the state of the bus.
-The front-end of that project consists of a web page that access the data stored in the AWS cloud following a REST paradigm and provides to the user all the information about indoor state of the bus in terms of temperature, humidity and CO2 and the position of the bus in near real-time.
-
+In the rest of this documment we will see all the previous components more in detail.
 
 
-## BOARDS
+## Physical Device
 
-### STM32 Nucleo-F446ZE
+The physical device developed is composed of three hardware components:
+- The borad B-L072Z-LRWAN1: Is a STM32 LoRaWAN discovery board that is the main board of our device. Its role is to collect the data from the sensors, format them in a json string and send the message to the cloud using LoRa protocol.
+- X-NUCLEO-IKS01A2: is a motion MEMS and environmental sensor expansion board for the STM32 Nucleo. It is a very interesting expansion board since it has all the most important sensors to monitor the environment. Furthermore it is equipped with Arduino UNO R3 connector layout so that we can plug it on top of the B-L072Z-LRWAN1 board.
+- MH-Z19C: It is an infrared CO2 sensor using non-dispersive infrared (NDIR) principle to detect the existence of CO2 in the air, with good selectivity, non-oxygen dependent and long life. 
 
-![](img/f446ze.JPG)
+Let's see all those hardware components more in details:
 
-- Core:
-  - Arm ® 32-bit Cortex ® M4 CPU with FPU
-  - Adaptive real-time accelerator (ART Accelerator)  from Flash memory, frequency up to 180 MHz
-  - MPU, 225 DMIPS/1.25 DMIPS/MHz
+### B-L072Z-LRWAN1: STM32 LoRa Discovery Board
 
-- Memories
-  - 512 Kbytes of Flash memory
-  - 128 Kbytes of SRAM
-  - Flexible external memory controller with up
-  - to 16-bit data bus: SRAM, PSRAM,
-  - SDRAM/LPSDR SDRAM, NOR/NAND
-  - Flash memories
-  - Dual mode QuadSPI interface
+***Technical description***: 
 
+The B-L072Z-LRWAN1 LoRa®/Sigfox™ Discovery kit is a development tool to learn and develop solutions based on LoRa®, Sigfox™, and FSK/OOK technologies The module is powered by an STM32L072CZ microcontroller and SX1276 transceiver. The transceiver features the LoRa® long-range modem, providing ultra-long-range spread-spectrum communication and high interference immunity, minimizing current consumption.The B-L072Z-LRWAN1 Discovery kit includes an ST-LINK/V2-1 embedded debug tool interface, LEDs, push-buttons, antenna, Arduino™ Uno V3 connectors and USB OTG connector in Micro-B format.
+The LoRaWAN™ stack supports Class A, Class B, and Class C.
 
+***Features:***
+- CMWX1ZZABZ-091 LoRa®/Sigfox™ module (Murata)
+  - Embedded ultra-low-power STM32L072CZ MCU, based on Arm® Cortex®-M0+ core, with 192 Kbytes of Flash memory, 20 Kbytes of RAM, 20 Kbytes of EEPROM
+  - Frequency range: 860 MHz - 930 MHz
+  - 4-channel,12-bit ADC, 2 × DAC
+  - 6-bit timers, LP-UART, I2C and SPI
+  - Embedded SX1276 transceiver
+  - LoRa®, FSK, GFSK, MSK, GMSK, and OOK modulations (+ Sigfox™ compatibility)
+  -  Programmable bit rate up to 300 kbit/s
+  - 127 dB+ dynamic range RSSI
+  - LoRaWAN™ Class A certified
+- Arduino™ Uno V3 connectors
+- Board power supply through the USB bus or external VIN/3.3 V supply voltage or batteries 
 
-- Datasheet: https://www.st.com/resource/en/datasheet/stm32f446ze.pdf
+***Datasheet***: https://www.st.com/resource/en/user_manual/um2115-discovery-kit-for-lorawan-sigfox-and-lpwan-protocols-with-stm32l0-stmicroelectronics.pdf
 
-### STM32 Nucleo-F401RE
+### X-NUCLEO-IKS01A2: Motion sensor 
 
-![](img/f401re.JPG)
+***Technical description***:
 
-- Core: 
-  - ARM ® 32-bit Cortex ® M4 CPU with FPU,  
-  - Adaptive real-time accelerator (ART Accelerator™) allowing 0-wait state execution from Flash memory
-  - frequency up to 84 MHz,
-  - memory protection unit, 105 DMIPS/1.25DMIPS/MHz
-- Memories
-  - up to 512 Kbytes of Flash memory
-  - up to 96 Kbytes of SRAM
-
-- Datasheet: https://www.st.com/resource/en/datasheet/stm32f446ze.pdf
-
-
-## SENSORS
-
-### GPS: X-NUCLEO-GNSS1A1
-
-Description:
-
-The X-NUCLEO-GNSS1A1 expansion board is based on the Teseo-LIV3F tiny GNSS module.
-It represents an affordable, easy-to-use, global navigation satellite system (GNSS) module, embedding a TeseoIII single die standalone positioning receiver IC, usable in different configurations in your STM32 Nucleo project.
-The Teseo-LIV3F is a compact (9.7x10.1 mm) module that provides superior accuracy thanks to the on-board 26 MHz temperature compensated crystal oscillator (TCXO) and a reduced time-to-first fix (TTFF) with its dedicated 32 KHz real-time clock (RTC) oscillator.
-The Teseo-LIV3F module runs the GNSS firmware (X-CUBE-GNSS1) to perform all GNSS operations including acquisition, tracking, navigation and data output without external memory support.
-The X-NUCLEO-GNSS1A1 expansion board is compatible with the Arduino™ UNO R3 connector and the ST morpho connector, so it can be plugged to the STM32 Nucleo development board and stacked with additional STM32 Nucleo expansion boards.
-
-![](img/gnss.JPG)
-
-Features:
-
-- Operating supply voltage: 3.3 - 5 V
-- Ambient temperature: -40/+85 °C
-- Sensitivity: -162 dBm indoor (tracking mode)
-- Interfaces:
-  - a UART port
-  - an I²C port
-  - Configurable digital I/O timepulse
-  - EXTINT input for wakeup
-- NMEA protocol
-- Assisted GNSS:
-  - Predictive autonomous
-  - Predictive server-based
-  - Real-time server-based
-- Compatible with STM32 Nucleo boards
-- Compatible with the Arduino™ UNO R3 connector
-- LNA and SAW filter on the RF path
-- SMA female antenna connector
-- Battery holder
-- RoHS and WEEE compliant
-
-Datasheet:
-
-https://www.st.com/en/ecosystems/x-nucleo-gnss1a1.html#overview
-
-
-### ACCELEROMETER, TEMPERATURE and HUMIDITY SENSOR: X-NUCLEO-IKS01A2
-
-![](img/iks01a2.JPG)
-
-Description:
-
-The X-NUCLEO-IKS01A2 is a motion MEMS andenvironmental sensor expansion board for the STM32 Nucleo.
+<img src="img/iks01a2.JPG" width="200" align="right"/> <br/>
+The X-NUCLEO-IKS01A2 is a motion MEMS and environmental sensor expansion board for the STM32 Nucleo.
 It is equipped with Arduino UNO R3 connector layout, and is designed around the LSM6DSL 3D accelerometer and 3D gyroscope, the LSM303AGR 3D accelerometer and 3D magnetometer, the HTS221 humidity and temperature sensor and the LPS22HB pressure sensor.
 The X-NUCLEO-IKS01A2 interfaces with the STM32 microcontroller via the I²C pin, and it is possible to change the default I²C port.
 
-Features:
+***Features:***
 
 - LSM6DSL MEMS 3D accelerometer
 (±2/±4/±8/±16 g) and 3D gyroscope
@@ -133,21 +81,21 @@ available
 - Equipped with Arduino UNO R3 connector
 - RoHS compliant
 
-Datasheet:
-
-https://www.st.com/en/ecosystems/x-nucleo-iks01a2.html#overview
+***Datasheet***: https://www.st.com/en/ecosystems/x-nucleo-iks01a2.html#overview
 
 
 ### CO2 SENSOR: MH-Z19C
 
-Description:
+***Technical description***:
 
+<img src="img/Co2.JPG" width="200" align="right"/> <br/>
 MH-Z19C NDIR infrared gas module is a common type, small size sensor, using non-dispersive infrared (NDIR) principle to detect the existence of CO2 in the air, with good selectivity, non-oxygen dependent and long life. Built-in temperature compensation; and it has UART output and PWM output. 
 It is developed by the tight integration of mature infrared absorbing gas detection technology, precision optical circuit design and superior circuit design.
 
-![](img/Co2.JPG)
 
-Features:
+***Features:*** 
+
+<img src="img/co2_params.JPG" width="300" align="right"/> <br/>
 
 - Chamber is gold plated, water-proof and anti-corrosion
 - High sensitivity, low power consumption
@@ -155,62 +103,44 @@ Features:
 - Temperature compensation, excellent linear output
 - Multiple output modes: UART, PWM
 - Long lifespan
-- Anti-water vapor interference, anti-poisonin
+- Anti-water vapor interference, anti-poisonin 
+<br/>
 
-Datasheet:
-
-https://www.winsen-sensor.com/d/files/infrared-gas-sensor/mh-z19c-pins-type-co2-manual-ver1_0.pdf
-
-Detection range and accuracy
-
-![](img/Co2_Acc_2.JPG)
-
-Main parameters
-
-![](img/co2_params.JPG)
+***Datasheet***: https://www.winsen-sensor.com/d/files/infrared-gas-sensor/mh-z19c-pins-type-co2-manual-ver1_0.pdf <br/>
 
 
-## CONNECTIVITY
+## CLOUD 
 
-### LoRa MODULE**: Dragino LoRa Shield - support 868M frequency
+--> Inserire immagine Cloud
 
-Features:
-
-- Compatible with 3.3v or 5v I/O Arduino Board.
-- Frequency Band: 868 MHZ
-- Low power consumption
-- Compatible with Arduino Leonardo, Uno, Mega, DUE
-- External Antenna via I-Pex connector
-
-![](img/LoRa.JPG)
-
-Specifications:
-
-- 168dB maximum link budget.
-- +20dBm - 100mW constant RF output vs.
-- +14dBm high efficiency PA.
-- Programmable bit rate up to 300 kbps.
-- High sensitivity: down to -148dBm.
-- Bullet-proof front end: IIP3 = -12.5dBm.
-- Excellent blocking immunity.
-- Low RX current of 10.3mA, 200nA register retention.
-- Fully integrated synthesizer with a resolution of 61 Hz.
-- FSK, GFSK, MSK, GMSK, LoRa™ and OOK modulation.
-- Built-in bit synchronizer for clock recovery.
-- Preamble detection.
-- 127 dB Dynamic Range RSSI.
-- Automatic RF Sense and CAD with ultra-fast AFC.
-- Packet engine up to 256 bytes with CRC.
-- Built-in temperature sensor and low battery indicator
-
-Datsheet: https://www.farnell.com/datasheets/2630874.pdf
+The image above shows the architecture of the cloud part of our project.
+Our cloud architecture uses the following AWS services:
+-***AWS IoT-Core***: Is the MQTT broker that receives the data coming from TTN in the specific aws-ttn stack. It receives the data on the topic *lorawan/$devID/uplink* and calls the lambda function *cbm-table-store* that formats the data and store them in a DynamoDB table called *cbm_table*.
+-***AWS DynamoDb***: To store the data collected by the physical device we use a DynamoDB table. All the incoming data are stored in *cbm_table* that is a dynamoDB table having four columns:
+  - timestamp: Is the key of the table and corresponds to the timestamp of the moment when the data are stored
+  - bus: number of the bus where we are collecting the data
+  - date: Date when the data are stored 
+  - payload: Contains a JSON string containing the values of temperature,humidity and co2 collected
+-***AWS API-Gateway***: Thanks to this service we made the data available through REST API. We have two endpoints "/bus" and "bus/id". In both cases the API Gateway calls the lambda function *cbm-getItem* that parse the endpoint and sends back the response to the API request.
+-***Lambda Functions***: With this utility we can build lambda functions to manage our data. We have developed two lambda functions:
+  - cbm-getItem: Invoked by the API Gateway when an API request is received, it computes the responses of the corresponding request:
+    - /bus: Returns the IDs of all the available buses in the database
+    - /bus/id: Returns the 20 most recent entries with bus=id.
+  - cbm-table-store: Receives the data received on aws-ttn stack. Reads the data, formats them and stores them in the dynamoDB table. To formatting the data it computes:
+    - Storage data
+    - timestamp relative to storage data
+    - extracts the bus id from the data and puts it in the specific column
+-***AWS CodeCommit***: AWS CodeCommit is a secure, highly scalable, managed source control service that hosts private Git repositories. In our case we use it to store the static files of our websites.
+-***AWS Amplify***: Is an AWS service that we use to deploy our web-site. In particular we connect it to the CodeCommit folder, it intreprets the static files and deploy the website.
 
 
 
-## ARCHITECTURE STRUCTURE:
+## FRONT-END
 
-![](img/Complete_Network_3.JPG)
-
+To manage the collected data we will use the Amazon Web Services, AWS, utilities.
+In particular our bus monitors will be connected with [AWS IoT Core for LoRaWAN](https://aws.amazon.com/it/iot-core/lorawan/) that is a fully managed LoRaWAN Network Server (LNS) that enables customers to connect wireless devices that use the LoRaWAN protocol.
+In the cloud will be collected all the data collected by the bus monitor and those data can be accessed any time to obtain the information about the state of the bus.
+The front-end of that project consists of a web page that access the data stored in the AWS cloud following a REST paradigm and provides to the user all the information about indoor state of the bus in terms of temperature, humidity and CO2 and the position of the bus in near real-time.
 
 
 # History
