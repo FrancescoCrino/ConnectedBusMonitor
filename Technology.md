@@ -137,10 +137,15 @@ Our cloud architecture uses the following AWS services:
 
 ## FRONT-END
 
-To manage the collected data we will use the Amazon Web Services, AWS, utilities.
-In particular our bus monitors will be connected with [AWS IoT Core for LoRaWAN](https://aws.amazon.com/it/iot-core/lorawan/) that is a fully managed LoRaWAN Network Server (LNS) that enables customers to connect wireless devices that use the LoRaWAN protocol.
-In the cloud will be collected all the data collected by the bus monitor and those data can be accessed any time to obtain the information about the state of the bus.
-The front-end of that project consists of a web page that access the data stored in the AWS cloud following a REST paradigm and provides to the user all the information about indoor state of the bus in terms of temperature, humidity and CO2 and the position of the bus in near real-time.
+The front-end of our system is a web-site developed using Angular framework and then deployed using *AWS CodeCommit* + *AWS Amplify*.
+The home page of the site shows the web-page title and several buttons each associated with a specific bus id available on the database.
+
+--> Immagine scelta id
+
+When an user click on a button, it goes to a page where all the details, in therms of temperature, humidithy and co2, of the choosen bus are shown.
+In particular there are three plots showing its historicals of temperature, humidity and co2 and there are also the most recent indicators of temperatue,humidity and co2 and the date of the last sampling.
+
+--> immagine web
 
 
 # History
