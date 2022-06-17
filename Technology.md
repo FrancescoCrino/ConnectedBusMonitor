@@ -5,7 +5,9 @@ At first we will look in detail all the hardware components used to build our de
 
 ## OVERALL ARCHITECHTURE:
 
---> Immagine dell'architettura
+<p align="center">
+  <img src="img/overall-arch.PNG" width="800"/> <br/>
+</p>
 
 The architecture of our system is the one shown in the image above.
 It is composed of 4 main parts:
@@ -30,8 +32,9 @@ Let's see all those hardware components more in details:
 
 ***Technical description***: 
 
+<img src="img/lora-shield.PNG" height="300" align="right"/> <br/>
 The B-L072Z-LRWAN1 LoRa®/Sigfox™ Discovery kit is a development tool to learn and develop solutions based on LoRa®, Sigfox™, and FSK/OOK technologies The module is powered by an STM32L072CZ microcontroller and SX1276 transceiver. The transceiver features the LoRa® long-range modem, providing ultra-long-range spread-spectrum communication and high interference immunity, minimizing current consumption.The B-L072Z-LRWAN1 Discovery kit includes an ST-LINK/V2-1 embedded debug tool interface, LEDs, push-buttons, antenna, Arduino™ Uno V3 connectors and USB OTG connector in Micro-B format.
-The LoRaWAN™ stack supports Class A, Class B, and Class C.
+The LoRaWAN™ stack supports Class A, Class B, and Class C. 
 
 ***Features:***
 - CMWX1ZZABZ-091 LoRa®/Sigfox™ module (Murata)
@@ -53,7 +56,7 @@ The LoRaWAN™ stack supports Class A, Class B, and Class C.
 
 ***Technical description***:
 
-<img src="img/iks01a2.JPG" width="200" align="right"/> <br/>
+<img src="img/iks01a2.png" width="200" align="right"/> <br/>
 The X-NUCLEO-IKS01A2 is a motion MEMS and environmental sensor expansion board for the STM32 Nucleo.
 It is equipped with Arduino UNO R3 connector layout, and is designed around the LSM6DSL 3D accelerometer and 3D gyroscope, the LSM303AGR 3D accelerometer and 3D magnetometer, the HTS221 humidity and temperature sensor and the LPS22HB pressure sensor.
 The X-NUCLEO-IKS01A2 interfaces with the STM32 microcontroller via the I²C pin, and it is possible to change the default I²C port.
@@ -111,7 +114,9 @@ It is developed by the tight integration of mature infrared absorbing gas detect
 
 ## CLOUD 
 
---> Inserire immagine Cloud
+<p align="center">
+  <img src="img/cloud-arch.PNG" width="800"/> <br/>
+</p>
 
 The image above shows the architecture of the cloud part of our project.
 Our cloud architecture uses the following AWS services:
@@ -140,13 +145,18 @@ Our cloud architecture uses the following AWS services:
 The front-end of our system is a web-site developed using Angular framework and then deployed using *AWS CodeCommit* + *AWS Amplify*.
 The home page of the site shows the web-page title and several buttons each associated with a specific bus id available on the database.
 
---> Immagine scelta id
+<p align="center">
+  <img src="img/fe-1.PNG" width="400" /> <br/>
+</p>
 
 When an user click on a button, it goes to a page where all the details, in therms of temperature, humidithy and co2, of the choosen bus are shown.
 In particular there are three plots showing its historicals of temperature, humidity and co2 and there are also the most recent indicators of temperatue,humidity and co2 and the date of the last sampling.
 
---> immagine web
+<p align="center">
+  <img src="img/fe-2.PNG" width="500"/> <br/>
+</p>
 
+The website is available here: https://main.d27i3cmnrkrp0t.amplifyapp.com/buses
 
 # History
  
