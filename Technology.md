@@ -125,7 +125,8 @@ Our cloud architecture uses the following AWS services:
   - timestamp: Is the key of the table and corresponds to the timestamp of the moment when the data are stored
   - bus: number of the bus where we are collecting the data
   - date: Date when the data are stored 
-  - payload: Contains a JSON string containing the values of temperature,humidity and co2 collected
+  - payload: Contains a JSON string containing the values of temperature,humidity and co2 collected <p align="center"> <img src="img/cbm-table-entry.PNG" width="700"/> <br/> </p>
+
 -***AWS API-Gateway***: Thanks to this service we made the data available through REST API. We have two endpoints "/bus" and "bus/id". In both cases the API Gateway calls the lambda function *cbm-getItem* that parse the endpoint and sends back the response to the API request.
 -***Lambda Functions***: With this utility we can build lambda functions to manage our data. We have developed two lambda functions:
   - cbm-getItem: Invoked by the API Gateway when an API request is received, it computes the responses of the corresponding request:
@@ -137,7 +138,6 @@ Our cloud architecture uses the following AWS services:
     - extracts the bus id from the data and puts it in the specific column
 -***AWS CodeCommit***: AWS CodeCommit is a secure, highly scalable, managed source control service that hosts private Git repositories. In our case we use it to store the static files of our websites.
 -***AWS Amplify***: Is an AWS service that we use to deploy our web-site. In particular we connect it to the CodeCommit folder, it intreprets the static files and deploy the website.
-
 
 
 ## FRONT-END
