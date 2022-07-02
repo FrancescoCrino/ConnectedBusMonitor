@@ -160,7 +160,10 @@ The website is available here: https://main.d27i3cmnrkrp0t.amplifyapp.com/buses
 
 # History
  
-The previous version of the project: <a href="https://github.com/FrancescoCrino/ConnectedBusMonitor/releases/tag/v1.0">ConnectedBusMonitor First Delivery</a>
+The previous version of the project: 
+
+- <a href="https://github.com/FrancescoCrino/ConnectedBusMonitor/releases/tag/v1.0">ConnectedBusMonitor First Delivery</a>
+- <a href="https://github.com/FrancescoCrino/ConnectedBusMonitor/releases/tag/v2.0">ConnectedBusMonitor Second Delivery</a>
 
 
 
