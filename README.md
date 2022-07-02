@@ -48,7 +48,8 @@ This experiment has been done in other cities as well:
 
 ## Releases
 
-Version 1.0: <a href="https://github.com/FrancescoCrino/ConnectedBusMonitor/releases/tag/v1.0">ConnectedBusMonitor First Delivery</a>
+- Version 1.0: <a href="https://github.com/FrancescoCrino/ConnectedBusMonitor/releases/tag/v1.0">ConnectedBusMonitor First Delivery</a>
+- Version 2.0: <a href="https://github.com/FrancescoCrino/ConnectedBusMonitor/releases/tag/v2.0">ConnectedBusMonitor Second Delivery</a>
 
 ## 🤝 Contributors
 
