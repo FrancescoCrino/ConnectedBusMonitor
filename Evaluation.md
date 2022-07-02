@@ -36,6 +36,16 @@ All the three spreading factors are good in terms of packet loss, in fact we hav
 Using SF9 means to have ToA of 0.41 seconds that means that respecting the 1% duty cycle we can sample each 41 seconds.
 Since we have the requirements of have data not older than 1 minute we need to check the latency on the entire path device/frontend to be sure that the requiremt is satidfied.
 
+## Network Delay
+
+<img src="img/overall-arch.PNG" width="500" align="right"/> The image on the right shows the overall architecture of our system. Looking at the architecture we can split our architecture overall delay in two delays: delay device/AWS and the delay AWS/front-end. </br>
+
+<img src="img/dev-aws-delay.PNG" width="500" align="right"/> In order to find the delay device/AWS we can split it into two other delays: delay device/TTN + delay TTN/AWS. In the image on the right we have a schema of how measure those delays. In fact the delay device/AWS corresponds to the ToA of the LoRaWAN packet and we have seen in the previous paragraph that we can retrieve it looking at the packet's metadata. The delay TTN/AWS is a bit more treacky but not difficult. We can compute this delay inside the lambda function that is in charge of store the incoming TTN messages in the DynamoDB table. In particular we can retireve the time when the lambda receives the data, then we can find in the metadata the time when the packet arrives to the TTN application server under "received_at" and finally the delay is the difference of the two. This delay is quite variable infact we have seen a max of around 2.9 seconds and a min of 1.1 seconds, with a mean value of 1.64 seconds.</br>
+Now we can find the delay device/AWS as ToA + delay TTN/AWS that in the worst case, using SF9 and considering the max TTN/AWS delay, is 3.31 seconds.</br>
+The delay AWS/front-end clearly depends on the network speed, with a speed of about 85Mbps we have a delay less than 1.3 seconds.
+Finally the worst overall delay, using SF9, is about 4.61 seconds.
+Finally usign SF9 we can sample each 43 seconds and consider the delay of 4.61 seconds we are able to respect the constraint of having data not older than 1 minute.
+
 
 
 
