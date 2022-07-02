@@ -56,26 +56,6 @@ To guarantee security over all the network we need to be sure that security is g
 
 We have just seen that all the paths in the systems architechture are secure and so the security constraint is guaranteed.
 
-
-# **Power consumption**
-
-Our bus monitor devices are static devices that we want to install inside the buses and since a city bus company have to manage thousands of buses we want to make the device as autonomous as possible from the energy point of view avoiding changing the battery frequently.
-
-We have thinking about different solutions and the most interested ones are: connect the device to the grid of the bus, use a rechargeable battery with a energy source like small solar panel or dynamo.
-
-The idea to use solar panel is not the best one since it cost a lot and there could be some problems for example in case of cloudy days or during the night.
-The idea to use a dynamo could be a good one since a dynamo it's not expensive and in a bus it can for sure generate enough power, on the other hand can be complicated to place a dynamo in a bus an connect it directly to our device.
-
-Since all the new generation city bus include usb port we think that most reliable solution is to plug the device directly to the bus through usb port.
-We can think to use a rechargeable battery to power the device while the bus is stopped at the terminus between two services.
-
-In that case using the board STM32 nucleo-f401re in stop mode during the permance at the terminus it needs 65 μA of current to stay on. 
-We can use a classic AA buttery of 2600mAh that can power the STM32 nucleo-f401re in stop mode for about 40000 hours, in fact 65μA = 0.065mA and 2600/0.065=40000.
-Furthermore if we use a rechageable AA battery that can recharge itself using the same power connection of the device to the bius usb port that battery will power our device for a very long time.
-
-In that analysis we're not taking into account the power consuming of the sensors that will remain on during the stop mode, we will test the effective energy consumption of the system as soon as possible.
-
-
 # History
  
 The previous version of the project: 
