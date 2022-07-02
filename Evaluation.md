@@ -1,11 +1,21 @@
 # Evaluation
 
-With our bus monitoring system we want to fournish to the users all the information that can make the experience of taking a bus more relaxing and simple.
-In particular we want to monitor not only the position of the bus in a near-real time way in order to gives to the user a correct information about the position of the bus but also make the user aware of the air quality inside the bus in term of CO2 quantity, temperature and humidity inside the bus.
+## Requirements
 
-For the evaluation of our system we want to focus on three of its main aspect: Indoor bus air quality monitoring, wireless communication constraints and costs.
+- Interpretation of the collected data basedon some thresholds.
+- The data have to be not older than 1 minute.
+- Respect the LoRa DutyCylce constraint
+- Guarantee security on the entire path.
 
-We will not focus on the power consumption aspect, that normally is one of the most important aspect for an IoT system, since our bus monitor device will be connected with the bus grid.
+## Indoor Parameters Levels
+
+To have a better understing of the values collected by the sensors we had fixed some thresholds for each of the three parameters: Temperature, humidity and CO2 concentration. According to many studies the following values are the one considered ideal for the three parameters:
+
+- Temperature: ideal range between 20 and 25 degree Celsius.
+- Humidity: ideal range between 40 and 60 percent.
+- CO2: ideal under 1100 ppm for idoor space.
+
+We have collected CO2 concentration in three different bus and the most relevant values are in the following table.
 
 # **Indoor bus air quality monitoring**
 
