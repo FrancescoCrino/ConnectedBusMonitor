@@ -1,6 +1,6 @@
 # TECHNOLOGY
 
-In this section all the technology aspects of our project are described. <\br>
+In this section all the technology aspects of our project are described. </br>
 At first we will look in detail all the hardware components used to build our device, then we will have a look at the overall architecture and then we will see how the cloud part is managed.
 
 ## OVERALL ARCHITECHTURE:
