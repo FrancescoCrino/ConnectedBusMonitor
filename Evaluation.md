@@ -22,7 +22,7 @@ To have a better understing of the values collected by the sensors we had fixed 
 We have collected CO2 concentration in three different bus and thanks to the range thresholds just defined we can interpret the data. In the following table there are some values of CO2 collected in three different bus.
 
 <p align="center">
-  <img src="img/co2_bus_table.JPG" width="800"/> <br/>
+  <img src="img/co2-bus-color.PNG" width="600"/> <br/>
 </p>
 
 Thanks to the thresholds we can assign labels to the collected data, for example we ahve asigned colors to the data in the table: red if CO2 concentration is too high, yellow if acceptable and green if ideal. Being able to assign labels or colors to the data can be helpfull for the users to understand the data, in fact even if a user does not know the meaning of a CO2 concentration of 1500ppm, it sees a red indicator that means it is bad.</br>
