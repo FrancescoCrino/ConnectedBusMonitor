@@ -7,9 +7,9 @@
 - Respect the LoRa DutyCylce constraint
 - Guarantee security on the entire path.
 
-## Indoor Parameters Levels
+## Air Quality Indicators
 
-To have a better understing of the values collected by the sensors we had fixed some thresholds for each of the three parameters: Temperature, humidity and CO2 concentration. According to many studies the following values are the one considered ideal for the three parameters:
+To have a better understing of the values collected by the sensors we had fixed some thresholds for each of the three parameters: Temperature, humidity and CO2 concentration. Even if there are not standard values used to define the ideal range for the three indicators, according to many studies the following values are the ones commonly used.
 
 - Temperature: ideal range between 20 and 25 degree Celsius.
 - Humidity: ideal range between 40 and 60 percent.
@@ -19,13 +19,15 @@ To have a better understing of the values collected by the sensors we had fixed 
   <img src="img/thresh-graphs.PNG" width="1000"/> <br/>
 </p>
 
-We have collected CO2 concentration in three different bus and we ahve collected the most relevant values in the following table.
+We have collected CO2 concentration in three different bus and thanks to the range thresholds just defined we can interpret the data. In the following table there are some values of CO2 collected in three different bus.
 
 <p align="center">
   <img src="img/co2_bus_table.JPG" width="800"/> <br/>
 </p>
 
-The concentration of CO2 inside the bus is the most of the time higher than 1100 ppm that according to our thresholds is the upper bound of the acceptable range. Only while stopped at the terminus with all the doors and windows opened we have registered a CO2 concentration on 600 ppm that is in the ideal range. We have understand, looking at our data, that the number of people inside the bus has a big impact on the CO2 concentration that is an expected behaviour since when we breathe out we produce CO2. Opening the windows and activating the air conditioning reduce the CO2 concentration but we were expecting a bigger impact of the air conditioning.
+Thanks to the thresholds we can assign labels to the collected data, for example we ahve asigned colors to the data in the table: red if CO2 concentration is too high, yellow if acceptable and green if ideal. Being able to assign labels or colors to the data can be helpfull for the users to understand the data, in fact even if a user does not know the meaning of a CO2 concentration of 1500ppm, it sees a red indicator that means it is bad.</br>
+
+As we can see from the table, the concentration of CO2 inside the bus is the most of the time higher than 1100 ppm that according to our thresholds is the upper bound of the acceptable range. Only while stopped at the terminus with all the doors and windows opened we have registered a CO2 concentration on 600 ppm that is in the ideal range. We have understand, looking at our data, that the number of people inside the bus has a big impact on the CO2 concentration that is an expected behaviour since when we breathe out we produce CO2. Opening the windows and activating the air conditioning reduce the CO2 concentration but we were expecting a bigger impact of the air conditioning.
 
 ## Sampling Frequency
 
