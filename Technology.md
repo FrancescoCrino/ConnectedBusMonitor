@@ -1,6 +1,6 @@
 # TECHNOLOGY
 
-In this section all the technology aspects of our project are described. <\br>
+In this section all the technology aspects of our project are described. </br>
 At first we will look in detail all the hardware components used to build our device, then we will have a look at the overall architecture and then we will see how the cloud part is managed.
 
 ## OVERALL ARCHITECHTURE:
@@ -160,7 +160,10 @@ The website is available here: https://main.d27i3cmnrkrp0t.amplifyapp.com/buses
 
 # History
  
-The previous version of the project: <a href="https://github.com/FrancescoCrino/ConnectedBusMonitor/releases/tag/v1.0">ConnectedBusMonitor First Delivery</a>
+The previous version of the project: 
+
+- <a href="https://github.com/FrancescoCrino/ConnectedBusMonitor/releases/tag/v1.0">ConnectedBusMonitor First Delivery</a>
+- <a href="https://github.com/FrancescoCrino/ConnectedBusMonitor/releases/tag/v2.0">ConnectedBusMonitor Second Delivery</a>
 
 
 
