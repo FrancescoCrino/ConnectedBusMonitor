@@ -29,6 +29,10 @@ Our device can be used by the public transport operators to monitor their vehicl
 - [Evaluation](https://www.youtube.com/watch?v=EWL8ODWsqZk)
 - [Future Plans](https://youtu.be/kzoWo98cubA)
 
+### Final Delivery
+- [Final Presentation](https://youtu.be/V1K5WpLHOn4)
+
+
 ## Releases
 
 - Version 1.0: <a href="https://github.com/FrancescoCrino/ConnectedBusMonitor/releases/tag/v1.0">ConnectedBusMonitor First Delivery</a>
