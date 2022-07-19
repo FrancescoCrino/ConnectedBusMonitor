@@ -35,25 +35,7 @@
 #include "sx126x_params.h"
 #endif
 
-/* Messages are sent every 20s to respect the duty cycle on each channel */
-#define PERIOD_S            (20U)
-
-#define SENDER_PRIO         (THREAD_PRIORITY_MAIN - 1)
-static kernel_pid_t sender_pid;
-static char sender_stack[THREAD_STACKSIZE_MAIN / 2];
-
-static semtech_loramac_t loramac;
-#if IS_USED(MODULE_SX127X)
-static sx127x_t sx127x;
-#endif
-#if IS_USED(MODULE_SX126X)
-static sx126x_t sx126x;
-#endif
-#if !IS_USED(MODULE_PERIPH_RTC)
-static ztimer_t timer;
-#endif
-
-/* Messages are sent every 20s to respect the duty cycle on each channel */
+/* Messages are sent every 20s to respect the duty cycle with SF7 */
 #define PERIOD_S            (20U)
 
 #define SENDER_PRIO         (THREAD_PRIORITY_MAIN - 1)
@@ -269,7 +251,11 @@ int main(void){
     semtech_loramac_set_appeui(&loramac, appeui);
     semtech_loramac_set_appkey(&loramac, appkey);
 
-    /* Use a fast datarate, e.g. BW125/SF7 in EU868 */
+    /* Use a fast datarate: 
+    LORAMAC_DR_5 : EU863-870: SF7 - BW125 (5470bit/s) 
+    LORAMAC_DR_4 : EU863-870: SF8 - BW125 (3125bit/s)
+    LORAMAC_DR_3 : EU863-870: SF9 - BW125 (1760bit/s)
+    */
     semtech_loramac_set_dr(&loramac, LORAMAC_DR_5);
 
     /* Start the Over-The-Air Activation (OTAA) procedure to retrieve the
