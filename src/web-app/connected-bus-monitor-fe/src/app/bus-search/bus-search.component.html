@@ -1,0 +1,13 @@
+<p>bus-search works!</p>
+<div id="search-component">
+    <label for="search-box">Bus Search</label>
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+
+    <ul class="search-result">
+        <li *ngFor="let bus of buses$ | async" >
+            <a routerLink="/detail/{{bus.id}}">
+                {{bus.id}}
+            </a>
+        </li>
+    </ul>
+</div>

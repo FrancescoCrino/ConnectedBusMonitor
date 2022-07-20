@@ -1,0 +1,92 @@
+<br>
+<div class="row" *ngIf="bus">
+    <h2>Bus {{bus.id}} Info</h2>
+<div class="row">
+    <div class="col-md-6">
+
+        <h3>Temperature (°C)</h3>
+
+    <custom-chart [metric]="'temperature'" [chartData]="bus.air_data"></custom-chart>
+    </div>
+    <div class="col-md-6">
+
+        <div *ngIf="bus.air_data[bus.air_data.length-1] as air_quality_value">
+
+
+            <h4>Indoor Air Quality (IAQ)</h4>
+
+            <div><img class="icon" src="assets/images/thermometer-ico.png"><span>Temperature: </span><span [class]="getState('temperature', air_quality_value.temperature)">{{air_quality_value.temperature}}°C</span></div>
+                <div><img class="icon" src="assets/images/humidity-ico.png"><span>Relative Humidity: </span><span [class]="getState('humidity', air_quality_value.humidity)">{{air_quality_value.humidity}}%</span></div>
+                <div><img class="icon" src="assets/images/co2-ico.png"><span>CO2: </span><span [class]="getState('co2', air_quality_value.co2)">{{air_quality_value.co2}}ppm</span></div>
+
+            <br>
+            <span >Last update: {{air_quality_value.date | date: 'dd/MM/yyyy HH:mm:ss' }}</span>
+
+        </div>
+    </div>
+
+</div>
+    <div class="row" style="padding: 30px 0!important;">
+
+    <div class="col-md-6">
+            <h3>Relative Humidity (%)</h3>
+            <custom-chart  [metric]="'humidity'" [chartData]="bus.air_data"></custom-chart>
+
+
+        </div>
+
+    <div class="col-md-6">
+        <h3>CO2 concentration (ppm)</h3>
+        <custom-chart  [metric]="'co2'" [chartData]="bus.air_data"></custom-chart>
+
+
+    </div>
+
+</div>
+    <br>
+    <br>
+    <div class="row">
+    <h4 style="padding: 20px 0!important;">Threshold Legend</h4>
+
+    <div class="col-md-12">
+
+
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="label">
+                <th mat-header-cell *matHeaderCellDef> Label </th>
+                <td mat-cell *matCellDef="let element" ><span [class]="element.class"> {{element.label}} </span></td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="temperature">
+                <th mat-header-cell *matHeaderCellDef> Temperature (°C)</th>
+                <td mat-cell *matCellDef="let element"> {{element.temperature}} </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="humidity">
+                <th mat-header-cell *matHeaderCellDef> RH (%)</th>
+                <td mat-cell *matCellDef="let element"> {{element.humidity}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="co2">
+                <th mat-header-cell *matHeaderCellDef> CO2 (ppm) </th>
+                <td mat-cell *matCellDef="let element"> {{element.co2}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedCols"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedCols;"></tr>
+        </table>
+    </div>
+
+    </div>
+
+
+
+</div>
+<button class="padding: 30px 0 !important;" type="button" (click)="goBack()">go back</button>
+
+
+
+

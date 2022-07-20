@@ -1,0 +1,23 @@
+<h2>Monitored Buses</h2>
+
+<!--
+
+<ul class="pd">
+
+    <li *ngFor="let busId of buses">
+       <a routerLink="/detail/{{busId}}">
+            <span class="badge">{{busId}}</span>
+        </a>
+    </li>
+</ul>
+
+-->
+
+<section>
+    <div class="example-button-row">
+        <button *ngFor="let busId of buses" routerLink="/detail/{{busId}}"  mat-button color="primary">
+            <img class="bus-ico" src="assets/images/bus_ico.png">
+
+            {{busId}}</button>
+    </div>
+</section>
